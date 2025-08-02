@@ -1,0 +1,215 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable} 
+\definecolor{myblue}{RGB}{27,133,184}
+\colorlet{bodytext}{black!80}  % or black!85 for slightly darker
+\linespread{1.1}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella} % beautiful, full character set
+\setsansfont{TeX Gyre Heros}   % matches well
+% \setmonofont{Fira Code}        % modern monospace
+
+\titleformat{\section}
+  [block]
+  {\Large\sffamily}{}{0pt}{\color{black}}[\color{myblue}\vspace{0.3ex}\hrule height 3pt width 1\textwidth]
+
+% === Reusable Experience Block Header ===
+\newcommand{\roleheader}[3]{%
+  {\large\sffamily\textbf{#1} @ #2} \hfill \textit{#3}\\[-0.3em]
+  \color{myblue}\rule{\linewidth}{1pt}\\[0.5em]\color{bodytext}
+}
+
+% === Experience Bullets Environment ===
+\newenvironment{experiencebullets}{%
+  \begin{itemize}[leftmargin=1.25em, itemsep=-0.25em]
+    \renewcommand{\labelitemi}{\textbullet}
+}{%
+  \end{itemize}
+}
+
+\newenvironment{experience}[4]{%
+  \roleheader{#1}{#2}{#3}%
+  #4\vspace{0.5em}%
+}{%
+  \vspace{1em}
+}
+
+
+% === Experience Bullet Point with Action → Impact ===
+\newcommand{\expbullet}[3]{%
+  \item \textbf{[#1]} {#2} \textrightarrow{} \textit{#3}%
+}
+
+\newcommand{\aexpbullet}[2]{%
+  \item {#1} \textrightarrow{} \textit{#2}%
+}
+
+% === Sub‑section heading inside an experience ===
+\newcommand{\expsubsection}[1]{%
+  \vspace{0.75em}%
+  {\sffamily\bfseries #1}\\[-0.2em]
+  \rule{0.15\linewidth}{1pt}\\[0.3em]
+}
+
+\newenvironment{impactsection}[2]{%
+  \vspace{0.5em}%
+  \textbf{[#1]}\\#2%
+  \begin{itemize}[leftmargin=2em, itemsep=-1em]
+}{%
+  \end{itemize}
+}
+
+\newlist{arrowitem}{itemize}{1}
+\setlist[arrowitem]{label=\textrightarrow{}, leftmargin=2em, noitemsep, topsep=0pt}
+
+\newcommand{\expmultibullet}[3]{%
+  \item \textbf{[#1]} #2
+  \begin{arrowitem}
+    #3
+  \end{arrowitem}
+}
+
+\newcommand{\name}[1]{\noindent{\LARGE\sffamily\textbf{#1}}}
+\newcommand{\contact}[1]{\begin{flushright} \small #1 \end{flushright}}
+\usepackage[none]{hyphenat}
+\raggedright
+
+
+%\renewcommand{\textbf}[1]{\textcolor{black!95}{#1}}
+
+
+
+\begin{document}
+\pagestyle{empty}
+\color{bodytext}
+
+\name{Srinath H S}\\[0.5em]
+\textbf{Principal Architect @ Bankbazaar.com}\\[0.3em]
+srinath.hs@gmail.com \quad | \quad +91 95387 88470 \quad | \quad linkedin.com/in/srinathhs
+
+17+ years of experience building secure, scalable platforms across startups and enterprises.
+Lead the DevOps function to drive cloud-native architecture, DevSecOps, observability, and automation.
+Known for aligning platform strategy with business goals through cross-functional collaboration and hands-on execution.
+
+
+\section*{Experience}
+
+\begin{experience}{Principal Architect}{Bankbazaar.com}{2019-Present, Bangalore}{%
+    Leading the \textbf{AWS Cloud and DevOps} function and driving platform evolution across security, cost optimization, scalability, and developer experience.%
+  }
+
+  \begin{experiencebullets}
+
+    \expmultibullet {Devops}{Built Scalable Infrastructure, Observability, and Incident Automation}
+    {
+      \aexpbullet {Defined microservice architecture standards, deployment patterns for seamless self-service of engineering requirements}
+      {New service onboarding time reduced from 2 days to < 1 hour}
+      
+      \aexpbullet {Standardized observability across all services by enforcing logging, alerting and metrics contracts}
+      {Elimination of alerting gaps across the entire platform}
+      
+      \aexpbullet {Defined the incident response process for AWS and Kubernetes and guided the team to build and maintain standard runbooks}
+      {Reduction P1 resolution times to < 1hour }
+      
+      \aexpbullet{Initiated and led automation of common alert response workflows; mentored team to build solutions independently}
+      {Reduced incident response times to under 5 minutes for frequent issues}
+
+      \aexpbullet{Spearheaded the definition and standardization of all AWS resources using Terraform}
+      {Enabled consistent, scalable infrastructure as code across production environments}
+      
+      \aexpbullet{Organized and led hands-on knowledge-sharing sessions on Terraform, Kubernetes, and AWS Cloud}
+      {Empowered the team to confidently debug, operate, and maintain production systems}
+    }
+
+    \expmultibullet {AI Initiatives}{Proposed and led AI Adoption across the organization.}
+    {
+      \item {Evaluated coding copilot options, benchmarked and drove the adoption of Cline.bot}
+      \item {[InProgress] Driving in-house auditing of customer service agent interactions using Whisper and Bedrock.}
+      \item {[InProgress] Identified and driving agentic solutions for business team to ask dynamic questions on BI data}
+    }
+
+    \expmultibullet {Security}{Proposed and led Scalable Developer-First Security Automation}
+    {
+      \aexpbullet {Implemented automated Fine-grained traffic management with developer self-service capability}{Ensures security compliance while maintaining developer productivity}
+      \aexpbullet {Integrated vulnerability detection into dev cycles}{Accelerated CVE resolution via developer self-service}
+      \aexpbullet {Integrated Sonar, AWS Inspector, and dependency checks.}{Ensuring 0 critical/high CVEs in production}
+      \aexpbullet {Built automatic resolution of AWS Security Hub alerts tailored to our workload}{Maintained >90\% compliance score for audits}
+    }
+
+    \expmultibullet {FinOps and engagement}{Spearheaded FinOps adoption across engineering teams}
+    {
+      \aexpbullet {Drive Cloud optimization with deep collaboration with engineering leadership team.}{Reduced AWS cost by 50k\$ per month}
+      \aexpbullet {Standardized JVM parameters and CPU memory configs}{Improved throughput and EKS cluster compaction by 20\%}
+      \aexpbullet {Implemented tagging, cost dashboards, and usage policies}{Improved cost visibility and accountability across 20 accounts.}
+      \aexpbullet {Mentored teams on AWS cost efficiency and tagging best practices.}{drove cultural shift toward shared FinOps ownership}
+      \item       {Regular cost reviews with Finance team to Understand OpEx expectations from business and align the resources accordingly.}
+      \aexpbullet {Collaborated with AWS TAM and architects.}{Proactively mitigated potential infrastructure, security and cost issues}
+      \item {Collaborated with Google for AI related engagements and DR cloud setup.}
+    }
+
+    \expbullet {COVID Response}{As part of WFH movement of entire company of \textasciitilde 1000 employees, Defined and led the secure user authentication process
+      using Akamai Zero Trust and two-way SSL handshake (Hashicorp Vault), securely authenticating the employee to internal network }
+    {Business continuity with zero security lapses.}
+
+    \expmultibullet {Data center to AWS migration}
+    {Designed and drove the cloud migration strategy for core services to an AWS, working closely with engineering,
+      network and security teams. Focused on defining architecture standards,
+      deployment patterns, and phased service cutover plans with active data center sync.}{
+      \item Uptime improved to beyond 99.9\% including planned downtimes which led to fewer business impacts.
+      \item Reduced cluster rebuild time to less than 1 hour for catastrophic failures ensuring quick disaster recovery for continued operations.
+      \item Improved latency by over 50\% Increased organic traffic and SEO ranking.
+    }
+  \end{experiencebullets}
+
+\end{experience}
+
+\begin{experience}{Principal Software Engineer}{Digilend.in}{2017-2019, Bangalore}
+  {\textbf{[FinTech lending platform]} Part of the \textbf{early startup team},
+    working directly with the founders. Delivered features across the stack and also maintaining the \textbf{AWS Cloud (EC2, RDS)}
+  }
+  \begin{experiencebullets}
+    \expbullet {Behavior model}{Built real-time user behavior tracking and dynamic journeys based on behavior}{Improved user loan approval rates by 15\%.}
+    \expbullet {Website Performance}{Refactored and reduced AngularJS bundle size for key customer flows}{Reduce page load time to under 15(sec) and improved experience for customers with unreliable internet}
+    \expbullet {Business Operations Automation}{Automated filling of loan application forms to reduce errors and improve on-ground agent performance.}{Document collection time reduced to less than 15 minutes per customer.}
+  \end{experiencebullets}
+\end{experience}
+
+
+\begin{experience}{Software Specialist}{Hewlett Packard Enterprise}{2011-2017, Bangalore}{Worked on enterprise tape storage management tool, focusing on UI modernization, API design, and cross-release feature development.}
+  \begin{experiencebullets}
+    \item \textbf{[UI Modernization]} Designed new UI according to HPE UI guidelines and Lead the team of 4 engineers to implement them as a transition from Flash to HTML5/React.js.
+    \item \textbf{[Rest API design]} Defined and delivered RESTful APIs for new React UI.
+  \end{experiencebullets}
+\end{experience}
+
+\begin{experience}{Software Engineer}{IBM India Software Labs}{2008-2011, Bangalore}{Full-stack engineer and lab systems administrator working on management tool for IBM Power Systems.}
+  \begin{experiencebullets}
+    \item \textbf{[Full-Stack Development]} Delivered UI/backend features, bug fixes across multiple releases of the Power Management Console.
+    \item \textbf{[Data center management]} Planned, Implemented and Maintained lab test environments for continuous development using DS5000, N3600, VMware ESXi and IBM power servers.
+  \end{experiencebullets}
+\end{experience}
+
+\section*{Awards \& Recognition}
+\begin{itemize}[leftmargin=*, itemsep=0em]
+  \item First place in Circuit Design during Eccentric 2006, Dept. of E\&C, MSRIT, Bangalore.
+  \item Top 10 team in “Mission to Mars”, Shasthra 2007, IIT Madras.
+\end{itemize}
+
+
+\section*{Education, Certifications \& Online Learning}
+
+\textbf{Bachelor of Engineering in Electronics \& Communication} \\
+Sapthagiri College of Engineering (VTU), Bangalore \hfill \textit{Aggregate: 75.90\%} \textit{2004–2008}  \\
+
+\vspace{0.5em}
+\textbf{Cryptography - I, Prof. Dan Boneh, Stanford University - Coursera} \hfill \textit{Sep 2013} \\
+
+\textbf{Machine Learning, Prof. Andrew Ng, Stanford University - Coursera} \hfill \textit{Dec 2011} \\
+
+\end{document}
