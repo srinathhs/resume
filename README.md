@@ -2,15 +2,14 @@
 **Principal Architect @ Bankbazaar.com**
 srinath.hs@gmail.com | +91 95387 88470 | linkedin.com/in/srinathhs
 
-17+ years of experience, including 5+ years in people management, leading and mentoring engineering teams to build secure, scalable platforms across startups and enterprises. Proven leader in driving cloud-native architecture, DevSecOps, observability, and automation. Adept at aligning platform strategy with business goals through cross-functional collaboration and hands-on execution.
+17+ years of experience building secure, scalable platforms across startups and enterprises. Lead the DevOps function to drive cloud-native architecture, DevSecOps, observability, and automation. Known for aligning platform strategy with business goals through cross-functional collaboration and hands-on execution.
 
 ## Core Competencies
-*   **Team Leadership & Mentoring:** Formal management of 4 engineers, informal mentorship of 10+, performance feedback, talent development, and hiring.
-*   **Technical Strategy & Roadmap:** Defining technical vision, creating success metrics, and agile execution.
-*   **Project Planning & Execution:** Driving initiatives from conception to delivery, cross-functional collaboration.
-*   **Cloud Architecture & DevOps:** AWS, Kubernetes, Terraform, scalable infrastructure, microservices.
-*   **DevSecOps & Automation:** Vulnerability management, security compliance, automated incident response.
-*   **FinOps & Cost Optimization:** Cloud cost reduction, resource efficiency, financial accountability.
+*   **Leadership & Technical Strategy:** Management of team size of 6, informal mentorship of 15+, hiring, talent development, Defining technical vision, creating success metrics and agile execution.
+*   **Project Planning \& Execution:** Driving initiatives from conception to delivery, cross-functional collaboration.
+*   **Cloud Architecture \& DevOps:** AWS, Kubernetes, Terraform, ansible, microservices.
+*   **DevSecOps \& Automation:** Vulnerability management, ISO / PCI compliance, automated incident response.
+*   **FinOps \& Cost Optimization:** Cloud cost reduction, resource efficiency, financial accountability.
 *   **Programming Languages:** Java (10+ years), Python (6+ years).
 
 ## Experience
@@ -18,15 +17,9 @@ srinath.hs@gmail.com | +91 95387 88470 | linkedin.com/in/srinathhs
 ### Principal Architect @ Bankbazaar.com (2019-Present, Bangalore)
 Leading the **AWS Cloud and DevOps** function and driving platform evolution across security, cost optimization, scalability, and developer experience.
 
-*   **[Team Leadership & Mentoring]** Cultivated a high-performing engineering culture and fostered talent development
-    *   Formally managed a team of 4 engineers, providing guidance and support for their professional growth -> *Ensured alignment with organizational goals and individual career aspirations*
-    *   Informally mentored 10+ engineers, sharing expertise in cloud architecture, DevOps, and best practices -> *Accelerated skill development and fostered a collaborative learning environment*
-    *   Led the hiring process for formal reports, including interviewing and selection -> *Successfully attracted and onboarded top-notch engineering talent*
-    *   Conducted informal performance feedback sessions and guided career progression -> *Empowered engineers to make independent decisions and achieve recognition*
-
 *   **[Devops]** Built Scalable Infrastructure, Observability, and Incident Automation
-    *   Directed the definition of microservice architecture standards and deployment patterns for seamless self-service of engineering requirements -> *New service onboarding time reduced from 2 days to < 1 hour*
-    *   Oversaw standardization of observability across all services by enforcing logging, alerting and metrics contracts -> *Elimination of alerting gaps across the entire platform*
+    *   Defined microservice architecture standards, deployment patterns for seamless self-service of engineering requirements -> *New service onboarding time reduced from 2 days to < 1 hour*
+    *   Standardized observability across all services by enforcing logging, alerting and metrics contracts -> *Elimination of alerting gaps across the entire platform*
     *   Defined the incident response process for AWS and Kubernetes and guided the team to build and maintain standard runbooks -> *Reduction P1 resolution times to < 1hour*
     *   Initiated and led automation of common alert response workflows; mentored team to build solutions independently -> *Reduced incident response times to under 5 minutes for frequent issues*
     *   Spearheaded the definition and standardization of all AWS resources using Terraform -> *Enabled consistent, scalable infrastructure as code across production environments*
@@ -48,7 +41,7 @@ Leading the **AWS Cloud and DevOps** function and driving platform evolution acr
     *   Standardized JVM parameters and CPU memory configs -> *Improved throughput and EKS cluster compaction by 20%*
     *   Implemented tagging, cost dashboards, and usage policies -> *Improved cost visibility and accountability across 20 accounts.*
     *   Mentored teams on AWS cost efficiency and tagging best practices. -> *drove cultural shift toward shared FinOps ownership*
-    *   Conducted regular cost reviews with Finance team to understand OpEx expectations from business and align resources accordingly.
+    *   Regular cost reviews with Finance team to understand OpEx expectations from business and align the resources accordingly.
     *   Collaborated with AWS TAM and architects. -> *Proactively mitigated potential infrastructure, security and cost issues*
     *   Collaborated with Google for AI related engagements and DR cloud setup.
 
