@@ -6,7 +6,8 @@
 \usepackage{fancyhdr}
 \usepackage{xcolor}
 \usepackage{booktabs}
-\usepackage{longtable} 
+\usepackage{longtable}
+\usepackage{multicol}
 \definecolor{myblue}{RGB}{27,133,184}
 \colorlet{bodytext}{black!80}  % or black!85 for slightly darker
 \linespread{1.1}
@@ -93,15 +94,14 @@
 \textbf{Principal Architect @ Bankbazaar.com}\\[0.3em]
 srinath.hs@gmail.com \quad | \quad +91 95387 88470 \quad | \quad linkedin.com/in/srinathhs
 
-17+ years of experience, including 5+ years in people management, leading and mentoring engineering teams to build secure, scalable platforms across startups and enterprises. Proven leader in driving cloud-native architecture, DevSecOps, observability, and automation. Adept at aligning platform strategy with business goals through cross-functional collaboration and hands-on execution.
+17+ years of experience, leading and mentoring engineering teams to build secure, scalable platforms across startups and enterprises. Proven leader in driving cloud-native architecture, DevSecOps, observability, and automation. Adept at aligning platform strategy with business goals through cross-functional collaboration and hands-on execution.
 
 \section*{Core Competencies}
 \begin{itemize}[leftmargin=*, itemsep=-0.5em]
-  \item \textbf{Team Leadership \& Mentoring:} Formal management of 4 engineers, informal mentorship of 10+, performance feedback, talent development, and hiring.
-  \item \textbf{Technical Strategy \& Roadmap:} Defining technical vision, creating success metrics, and agile execution.
+  \item \textbf{Leadership \& Technical Strategy:} Management of team size of 6, informal mentorship of 15+, hiring, talent development, Defining technical vision, creating success metrics and agile execution.
   \item \textbf{Project Planning \& Execution:} Driving initiatives from conception to delivery, cross-functional collaboration.
-  \item \textbf{Cloud Architecture \& DevOps:} AWS, Kubernetes, Terraform, scalable infrastructure, microservices.
-  \item \textbf{DevSecOps \& Automation:} Vulnerability management, security compliance, automated incident response.
+  \item \textbf{Cloud Architecture \& DevOps:} AWS, Kubernetes, Terraform, ansible, microservices.
+  \item \textbf{DevSecOps \& Automation:} Vulnerability management, ISO / PCI compliance, automated incident response.
   \item \textbf{FinOps \& Cost Optimization:} Cloud cost reduction, resource efficiency, financial accountability.
   \item \textbf{Programming Languages:} Java (10+ years), Python (6+ years).
 \end{itemize}
@@ -114,77 +114,26 @@ srinath.hs@gmail.com \quad | \quad +91 95387 88470 \quad | \quad linkedin.com/in
 
   \begin{experiencebullets}
 
-    \expmultibullet {Team Leadership \& Mentoring}{Cultivated a high-performing engineering culture and fostered talent development}
+    \item \textbf{[Engineering management]} Cultivated a high-performing engineering culture with team of 6 engineers and broader mentoring 15 engineers
     {
-      \aexpbullet {Formally managed a team of 4 engineers, providing guidance and support for their professional growth}
-      {Ensured alignment with organizational goals and individual career aspirations}
-      \aexpbullet {Informally mentored 10+ engineers, sharing expertise in cloud architecture, DevOps, and best practices}
-      {Accelerated skill development and fostered a collaborative learning environment}
-      \aexpbullet {Led the hiring process for formal reports, including interviewing and selection}
-      {Successfully attracted and onboarded top-notch engineering talent}
-      \aexpbullet {Conducted informal performance feedback sessions and guided career progression}
-      {Empowered engineers to make independent decisions and achieve recognition}
+      % \aexpbullet {Led hiring, performance feedback, and career progression}
+      % {Fostered a collaborative environment that accelerated skill development and empowered engineers to make independent decisions}
     }
 
-    \expmultibullet {Devops}{Built Scalable Infrastructure, Observability, and Incident Automation}
-    {
-      \aexpbullet {Directed the definition of microservice architecture standards and deployment patterns for seamless self-service of engineering requirements}
-      {New service onboarding time reduced from 2 days to < 1 hour}
-      
-      \aexpbullet {Oversaw standardization of observability across all services by enforcing logging, alerting and metrics contracts}
-      {Elimination of alerting gaps across the entire platform}
-      
-      \aexpbullet {Defined the incident response process for AWS and Kubernetes and guided the team to build and maintain standard runbooks}
-      {Reduction P1 resolution times to < 1hour }
-      
-      \aexpbullet{Initiated and led automation of common alert response workflows; mentored team to build solutions independently}
-      {Reduced incident response times to under 5 minutes for frequent issues}
+    \expbullet{DevOps \& Automation}{Defined microservice standards, standardized observability, and adopted Terraform for IaC}{Reduced service onboarding from days to <1 hour, cut P1 resolution times to <1 hour, and empowered team to operate production systems confidently.}
 
-      \aexpbullet{Spearheaded the definition and standardization of all AWS resources using Terraform}
-      {Enabled consistent, scalable infrastructure as code across production environments}
-      
-      \aexpbullet{Organized and led hands-on knowledge-sharing sessions on Terraform, Kubernetes, and AWS Cloud}
-      {Empowered the team to confidently debug, operate, and maintain production systems}
-    }
+    \expbullet {AI Initiatives}{Championed and led AI adoption across the organization}
+    {Evaluated and drove adoption of coding copilots (Cline.bot) and initiated projects for agentic BI and customer service auditing using Whisper and Bedrock.}
 
-    \expmultibullet {AI Initiatives}{Proposed and led AI Adoption across the organization.}
-    {
-      \item {Evaluated coding copilot options, benchmarked and drove the adoption of Cline.bot}
-      \item {[InProgress] Driving in-house auditing of customer service agent interactions using Whisper and Bedrock.}
-      \item {[InProgress] Identified and driving agentic solutions for business team to ask dynamic questions on BI data}
-    }
+    \expbullet{Developer-First Security}{Integrated automated vulnerability detection and self-service traffic management}{Maintained >90\% compliance with 0 critical CVEs in production, ensuring security without compromising developer productivity.}
 
-    \expmultibullet {Security}{Proposed and led Scalable Developer-First Security Automation}
-    {
-      \aexpbullet {Implemented automated Fine-grained traffic management with developer self-service capability}{Ensures security compliance while maintaining developer productivity}
-      \aexpbullet {Integrated vulnerability detection into dev cycles}{Accelerated CVE resolution via developer self-service}
-      \aexpbullet {Integrated Sonar, AWS Inspector, and dependency checks.}{Ensuring 0 critical/high CVEs in production}
-      \aexpbullet {Built automatic resolution of AWS Security Hub alerts tailored to our workload}{Maintained >90\% compliance score for audits}
-    }
+    \expbullet{FinOps \& Cost Optimization}{Led cloud optimization initiatives and established cost visibility across 20+ AWS accounts}{Reduced monthly AWS costs by \$50k, improved EKS cluster efficiency by 20\%, and implemented robust cost tracking and accountability.}
 
-    \expmultibullet {FinOps and engagement}{Spearheaded FinOps adoption across engineering teams}
-    {
-      \aexpbullet {Drove Cloud optimization with deep collaboration with engineering leadership team.}{Reduced AWS cost by 50k\$ per month}
-      \aexpbullet {Standardized JVM parameters and CPU memory configs}{Improved throughput and EKS cluster compaction by 20\%}
-      \aexpbullet {Implemented tagging, cost dashboards, and usage policies}{Improved cost visibility and accountability across 20 accounts.}
-      \aexpbullet {Mentored teams on AWS cost efficiency and tagging best practices.}{drove cultural shift toward shared FinOps ownership}
-      \item       {Conducted regular cost reviews with Finance team to understand OpEx expectations from business and align resources accordingly.}
-      \aexpbullet {Collaborated with AWS TAM and architects.}{Proactively mitigated potential infrastructure, security and cost issues}
-      \item {Collaborated with Google for AI related engagements and DR cloud setup.}
-    }
+    \expbullet {COVID Response}{Led secure remote access implementation for 1000+ employees}
+    {Ensured business continuity with zero security lapses using Akamai Zero Trust and HashiCorp Vault.}
 
-    \expbullet {COVID Response}{As part of WFH movement of entire company of \textasciitilde 1000 employees, Defined and led the secure user authentication process
-      using Akamai Zero Trust and two-way SSL handshake (Hashicorp Vault), securely authenticating the employee to internal network }
-    {Business continuity with zero security lapses.}
-
-    \expmultibullet {Data center to AWS migration}
-    {Designed and drove the cloud migration strategy for core services to an AWS, working closely with engineering,
-      network and security teams. Focused on defining architecture standards,
-      deployment patterns, and phased service cutover plans with active data center sync.}{
-      \item Uptime improved to beyond 99.9\% including planned downtimes which led to fewer business impacts.
-      \item Reduced cluster rebuild time to less than 1 hour for catastrophic failures ensuring quick disaster recovery for continued operations.
-      \item Improved latency by over 50\% Increased organic traffic and SEO ranking.
-    }
+    \expbullet {Data Center to AWS Migration}{Designed and drove the cloud migration strategy for core services}
+    {Improved uptime to >99.9\%, cut disaster recovery time to <1 hour, and reduced latency by 50\%, boosting SEO ranking.}
   \end{experiencebullets}
 
 \end{experience}
@@ -202,17 +151,17 @@ srinath.hs@gmail.com \quad | \quad +91 95387 88470 \quad | \quad linkedin.com/in
 
 
 \begin{experience}{Software Specialist}{Hewlett Packard Enterprise}{2011-2017, Bangalore}{Worked on enterprise tape storage management tool, focusing on UI modernization, API design, and cross-release feature development.}
-  \begin{experiencebullets}
-    \item \textbf{[UI Modernization]} Designed new UI according to HPE UI guidelines and Lead the team of 4 engineers to implement them as a transition from Flash to HTML5/React.js.
-    \item \textbf{[Rest API design]} Defined and delivered RESTful APIs for new React UI.
-  \end{experiencebullets}
+  % \begin{experiencebullets}
+  %   \item \textbf{[UI Modernization]} Designed new UI according to HPE UI guidelines and Lead the team of 4 engineers to implement them as a transition from Flash to HTML5/React.js.
+  %   \item \textbf{[Rest API design]} Defined and delivered RESTful APIs for new React UI.
+  % \end{experiencebullets}
 \end{experience}
 
 \begin{experience}{Software Engineer}{IBM India Software Labs}{2008-2011, Bangalore}{Full-stack engineer and lab systems administrator working on management tool for IBM Power Systems.}
-  \begin{experiencebullets}
-    \item \textbf{[Full-Stack Development]} Delivered UI/backend features, bug fixes across multiple releases of the Power Management Console.
-    \item \textbf{[Data center management]} Planned, Implemented and Maintained lab test environments for continuous development using DS5000, N3600, VMware ESXi and IBM power servers.
-  \end{experiencebullets}
+  % \begin{experiencebullets}
+  %   \item \textbf{[Full-Stack Development]} Delivered UI/backend features, bug fixes across multiple releases of the Power Management Console.
+  %   \item \textbf{[Data center management]} Planned, Implemented and Maintained lab test environments for continuous development using DS5000, N3600, VMware ESXi and IBM power servers.
+  % \end{experiencebullets}
 \end{experience}
 
 \section*{Awards \& Recognition}
