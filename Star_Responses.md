@@ -147,7 +147,11 @@
 ## Cross-Team Conflict
 
 **20. CVE Deployment Block — Infosec vs Dev**
+
 **S:** Infosec wanted to block deployments with critical CVEs; dev teams opposed.
+
 **T:** Find a compromise that maintained security without blocking delivery.
+
 **A:** Negotiated quarterly CVE reduction drives instead of blocking, aligned with dev cycles, maintained visibility via dashboards.
+
 **R:** Security and dev teams aligned, compliance targets met without hurting velocity.
