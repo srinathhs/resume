@@ -1,0 +1,209 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{parskip}
+\titleformat{\section}{\color{blue}\normalfont\Large\bfseries}{}{0em}{}[{\titlerule[0.8pt]}]
+\titleformat{\subsection}{\color{red}\normalfont\large\bfseries}{}{0em}{}
+
+\begin{document}
+
+\section{Leadership \& Team Building}
+
+\subsection{Building \& Scaling Engineering Team During Cloud Migration}
+\textbf{S:} Bankbazaar decided to migrate from our datacenter to AWS, a major shift for the company. I was the solutions architect responsible for the infrastructure side.
+
+\textbf{T:} Lead the migration while ensuring minimal disruption, and strengthen the teams to handle the new environment.
+
+\textbf{A:} Expanded the DevOps team with 2 junior engineers and production support with 5 members, hiring for learning agility. Trained them on Kubernetes and AWS using internal sessions, hands-on mentoring, and AWS-led courses. Coordinated closely with the dev lead to split responsibilities — I owned infra readiness, he owned application readiness. We migrated in phases, starting with low-risk leaf services to uncover issues early, including unexpected DB latency over Direct Connect, which led us to reprioritize.
+
+\textbf{R:} Critical services cut over with zero issues, uptime improved to 99.9\%, latency dropped 50\%, and cost savings met projections.
+
+\subsection{Hiring \& Developing Juniors in DevOps/PS}
+\textbf{S:} During the cloud migration, we needed more hands on infrastructure and production support.
+
+\textbf{T:} Hire and grow talent who could handle Kubernetes and AWS despite limited prior experience.
+
+\textbf{A:} Focused interviews on learning aptitude and logical problem solving. Once hired, provided targeted training on IaC, Kubernetes, and AWS. Integrated them into live migration workstreams so they could learn in real scenarios.
+
+\textbf{R:} Within months, the hires were independently managing infra tasks and supporting production, reducing load on senior staff.
+
+\section{Automation \& Process Simplification}
+
+\subsection{Service Onboarding Automation (From 1 Week to 1 Hour)}
+\textbf{S:} Post-migration, onboarding a new service to production took a week due to multiple handoffs between Dev, Infra, Infosec, and Network.
+
+\textbf{T:} Remove friction and drastically shorten the onboarding timeline.
+
+\textbf{A:} Built a platform abstraction layer to automate AWS/Kubernetes provisioning with secure defaults, standardized observability, and embedded Infosec scans. Negotiated a compromise on CVEs — allow deployment but run quarterly remediation drives. Changed the process so developers committed a manifest file and deployment happened on merge.
+
+\textbf{R:} Onboarding dropped to under 1 hour, with improved developer satisfaction and stronger, more consistent security.
+
+\subsection{Terraforming Production Resources for Long-Term Maintainability}
+\textbf{S:} Existing production resources were manually provisioned, making maintenance error-prone.
+
+\textbf{T:} Bring them under Terraform for consistency and long-term maintainability.
+
+\textbf{A:} Chose to keep Terraform code extremely simple and readable so anyone in the org could contribute. Accepted a slower migration process to ensure clarity and maintainability over time.
+
+\textbf{R:} Reduced operational risk, improved onboarding for new engineers, and made production infrastructure easier to maintain.
+
+\section{Observability \& Data-Driven Decisions}
+
+\subsection{Business Insights via Observability Stack}
+\textbf{S:} Developers were debugging business/partner issues via Kafka metrics, pulling them off feature work.
+
+\textbf{T:} Enable business teams to self-serve real-time insights without dev involvement.
+
+\textbf{A:} Routed select Kafka streams to Elasticsearch and built Kibana dashboards with role-based access. Trained Production Support to onboard business teams.
+
+\textbf{R:} Call center monitored campaigns in real time, partner issues were flagged proactively, and the system became critical enough to be separated from the core observability stack for stability.
+
+\subsection{Database Performance Diagnosis via Disk Queue Depth}
+\textbf{S:} A database was showing unexplained performance drops, and no one could pinpoint why.
+
+\textbf{T:} Identify the root cause to decide on scaling.
+
+\textbf{A:} Reviewed CloudWatch metrics and focused on disk queue depth, which indicated I/O bottlenecks. Used this data to justify an upgrade.
+
+\textbf{R:} Performance improved, and disk queue depth became a core performance metric in our monitoring.
+
+\section{Security \& Compliance}
+
+\subsection{Security Automation \& CVE Dashboards}
+\textbf{S:} Needed ISO, PCI-DSS compliance and to satisfy partner bank audits with zero critical/high CVEs.
+
+\textbf{T:} Achieve security targets without slowing development.
+
+\textbf{A:} Built a cross-account AWS Security Hub auto-resolution tool, created real-time CVE dashboards for developers, and ran quarterly joint remediation drives. Negotiated exceptions for unpatchable CVEs.
+
+\textbf{R:} Maintained >90\% Security Hub score and zero critical/high CVEs while preserving developer velocity.
+
+\subsection{Infosec Disagreement Over Cloud-Native Networking}
+\textbf{S:} Infosec wanted a traditional single-point firewall; I proposed cloud-native VPC/subnet architecture.
+
+\textbf{T:} Defend the new approach while maintaining security trust.
+
+\textbf{A:} Compared pros/cons, showed AWS-native controls (Istio, NLB, security groups) offered more granular security. AWS architects backed the design. CTO signed a waiver and I committed to deny-all rules and zero CVEs.
+
+\textbf{R:} Adopted cloud-native architecture, preserved agility, and maintained a strong relationship with Infosec.
+
+\subsection{Distroless Image Adoption}
+\textbf{S:} Teams built and maintained base images, which was a security and maintenance burden.
+
+\textbf{T:} Move to distroless images org-wide.
+
+\textbf{A:} Presented the security advantages and maintenance simplicity of distroless versus custom images. Highlighted that we’re not security experts and should leverage hardened vendor-provided images.
+
+\textbf{R:} Organization adopted distroless images, reducing maintenance overhead and improving security posture.
+
+\subsection{Secure Secret Encryption Pipeline}
+\textbf{S:} Developers needed a way to encrypt text for git storage without exposing encryption keys.
+
+\textbf{T:} Provide a secure, simple workflow.
+
+\textbf{A:} Built a pipeline that took a submitted secret, encrypted it, and returned it — keys never left the system.
+
+\textbf{R:} Workflow security improved, and encryption became seamless for developers.
+
+\section{Cost Optimization \& Architecture}
+
+\subsection{FinOps Cloud Cost Reduction}
+\textbf{S:} Finance requested significant AWS cost reduction to <\$100K/month.
+
+\textbf{T:} Identify and implement savings without hurting performance.
+
+\textbf{A:} Analyzed costs, tackled major drivers (Keyspaces, S3, Kafka, RDS), negotiated data retention with business teams, improved RI coverage, implemented t-shirt sizing, and built cost visibility dashboards via CUR and Quicksight. Redesigned services for cost efficiency.
+
+\textbf{R:} Costs dropped below target and governance processes were put in place to maintain control.
+
+\subsection{Email/SMS Service Redesign for Cost Savings}
+\textbf{S:} Keyspaces cost for storing email/SMS payloads was high.
+
+\textbf{T:} Reduce cost without hurting performance.
+
+\textbf{A:} Moved payload storage to S3, leveraging slower downstream send latency to mask retrieval time.
+
+\textbf{R:} Cut Keyspaces cost significantly with no noticeable performance impact.
+
+\section{Cloud Migration \& DR}
+
+\subsection{Datacenter to AWS Migration}
+\textbf{S:} Bankbazaar migrating from datacenter to AWS; I owned infra design and execution.
+
+\textbf{T:} Ensure smooth migration with minimal disruption.
+
+\textbf{A:} Coordinated phased cutover starting with low-risk services, hired and trained team, handled DB latency issue by reprioritizing DB move, split responsibilities clearly with dev lead.
+
+\textbf{R:} Zero issues on critical cutovers, 99.9\% uptime, 50\% latency reduction.
+
+\subsection{Staging Kubernetes Rebuild Failure \& DR Lesson}
+\textbf{S:} Staging Kubernetes rebuild failed recently.
+
+\textbf{T:} Learn from the failure to improve readiness.
+
+\textbf{A:} Treated it as a DR drill, identified gaps in staging processes, and mirrored fixes to production readiness plans.
+
+\textbf{R:} Improved DR readiness by applying learnings from staging.
+
+\section{AI / Innovation}
+
+\subsection{AI Coding Tool Adoption}
+\textbf{S:} New AI coding tools were emerging with claims of higher productivity; earlier tools lacked large-codebase understanding.
+
+\textbf{T:} Evaluate and recommend tools for org use.
+
+\textbf{A:} Tested Cline, Claude, Cursor, and Copilot across DevOps, Java, ReactJS; ran pilot with developers; started adoption top-down with architects; enforced normal code reviews.
+
+\textbf{R:} Selected Cline initially, greatly improved code documentation; later re-evaluated and moved to Claude Code.
+
+\section{Ambiguity \& Crisis Management}
+
+\subsection{COVID Secure WFH Rollout}
+\textbf{S:} COVID lockdown required 1,000 CS agents to work from home securely.
+
+\textbf{T:} Deliver secure, reliable remote access under unclear conditions.
+
+\textbf{A:} Implemented two-way SSL + TOTP authentication via Akamai Zero Trust, preconfigured and locked down OS, physically delivered machines, set up tiered WhatsApp support groups, solved connectivity issues with network cards/data packs.
+
+\textbf{R:} Agents worked securely from home without disruption; lessons learned still applied in partial WFH setup.
+
+\subsection{Kubernetes P0 Outage During Migration}
+\textbf{S:} Datacenter Kubernetes cluster failed during migration, taking down services.
+
+\textbf{T:} Restore services quickly.
+
+\textbf{A:} Decided to skip repair and migrate affected services to cloud; provisioned resources, had devs prep builds, coordinated via live Teams call with all stakeholders.
+
+\textbf{R:} Restored services in 4 hours, no business-day impact, management impressed with DR capability.
+
+\subsection{Annual Kubernetes Rebuild Decision-Making}
+\textbf{S:} Annual rebuild/upgrade as DR readiness sometimes triggers unexpected issues.
+
+\textbf{T:} Make go/no-go calls under pressure.
+
+\textbf{A:} If the fix was within the platform scope, I decided; if it was application-specific, delegated decision-making to the respective team lead with an ETA request; kept clear communications on impact and decisions.
+
+\textbf{R:} Completed most upgrades successfully, aborted gracefully when needed, built trust in my judgment.
+
+\subsection{Scope Creep Pushback in Production Fixes}
+\textbf{S:} Startups often want to push fixes quickly to production.
+
+\textbf{T:} Ensure changes are properly validated in staging.
+
+\textbf{A:} Took hard calls to delay production deployment until adequate staging time was given.
+
+\textbf{R:} Reduced production incidents from untested fixes.
+
+\section{Cross-Team Conflict}
+
+\subsection{CVE Deployment Block \&mdash; Infosec vs Dev}
+\textbf{S:} Infosec wanted to block deployments with critical CVEs; dev teams opposed.
+
+\textbf{T:} Find a compromise that maintained security without blocking delivery.
+
+\textbf{A:} Negotiated quarterly CVE reduction drives instead of blocking, aligned with dev cycles, maintained visibility via dashboards.
+
+\textbf{R:} Security and dev teams aligned, compliance targets met without hurting velocity.
+
+\end{document}
