@@ -1,6 +1,6 @@
 # Guidelines for Interviews
 
-1. Use hellointerview to prepare
+1. Use hellointerview to prepare most questions come from here
 2. Star stories and fluency / answering naturally is very very very important
 3. Usually the system is now as follows:
    - HR screening
